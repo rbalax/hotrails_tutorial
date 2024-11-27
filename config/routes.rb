@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   root "pages#home"
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :quotes
+  resources :quotes do
+    resources :line_item_dates, except: [:index, :show]
+  end
 end
